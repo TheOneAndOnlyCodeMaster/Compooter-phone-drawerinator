@@ -9,16 +9,16 @@ if(width<992){
     document.getElementById("myCanvas").height=new_height;
     document.body.style.overflow="hidden";
 
-    canvas.addEventListener("touchstart", my_touchstart);
+    myCanvas.addEventListener("touchstart", my_touchstart);
     function my_touchstart(e)
     {
-        last_position_of_x = e.touches[0].clientX - canvas.offsetLeft;
-        last_position_of_y = e.touches[0].clientY - canvas.offsetTop;
+        last_position_of_x = e.touches[0].clientX - myCanvas.offsetLeft;
+        last_position_of_y = e.touches[0].clientY - myCanvas.offsetTop;
 }
-canvas.addEventListener("touchmove", my_touchmove)
+myCanvas.addEventListener("touchmove", my_touchmove)
 function my_touchmove(e){
-    current_pos_mouse_x = e.touches[0].clientX - canvas.offsetLeft;
-    current_pos_mouse_y = e.touches[0].clientY - canvas.offsetTop;
+    current_pos_mouse_x = e.touches[0].clientX - myCanvas.offsetLeft;
+    current_pos_mouse_y = e.touches[0].clientY - myCanvas.offsetTop;
     console.log(current_pos_mouse_x);
 
     ctx.beginPath();
@@ -27,5 +27,7 @@ function my_touchmove(e){
     ctx.moveTo(last_position_of_x, last_position_of_y);
     ctx.lineTo(current_pos_mouse_x, current_pos_mouse_y);
     ctx.stroke();
+    last_position_of_x = current_pos_mouse_x;
+    last_position_of_y = current_pos_mouse_y;
 }
 }
