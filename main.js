@@ -42,8 +42,8 @@ mouseEvent="mouseDown";
 }
 myCanvas.addEventListener("mousemove", my_mousemove);
 function my_mousemove(e){
-    current_pos_mouse_x = e.clientX - canvas.offsetLeft;
-    current_pos_mouse_y = e.clientY - canvas.offsetTop;
+    current_pos_mouse_x = e.clientX - myCanvas.offsetLeft;
+    current_pos_mouse_y = e.clientY - myCanvas.offsetTop;
     console.log("current position of X ="+current_pos_mouse_x);
     console.log("current position of Y ="+current_pos_mouse_y);
 
